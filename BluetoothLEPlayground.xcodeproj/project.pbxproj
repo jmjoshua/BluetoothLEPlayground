@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		037544B12ACE05D200EE11F8 /* BluetoothController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037544B02ACE05D200EE11F8 /* BluetoothController.swift */; };
-		037544B42ACE063C00EE11F8 /* CombineCoreBluetooth in Frameworks */ = {isa = PBXBuildFile; productRef = 037544B32ACE063C00EE11F8 /* CombineCoreBluetooth */; };
+		037544BE2ACE10FC00EE11F8 /* BluetoothKit in Frameworks */ = {isa = PBXBuildFile; productRef = 037544BD2ACE10FC00EE11F8 /* BluetoothKit */; };
 		03CE39072ACDE14C00CF882B /* BluetoothLEPlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE39062ACDE14C00CF882B /* BluetoothLEPlaygroundApp.swift */; };
 		03CE39092ACDE14C00CF882B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE39082ACDE14C00CF882B /* ContentView.swift */; };
 		03CE390B2ACDE14E00CF882B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03CE390A2ACDE14E00CF882B /* Assets.xcassets */; };
@@ -57,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				037544B42ACE063C00EE11F8 /* CombineCoreBluetooth in Frameworks */,
+				037544BE2ACE10FC00EE11F8 /* BluetoothKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +162,7 @@
 			);
 			name = BluetoothLEPlayground;
 			packageProductDependencies = (
-				037544B32ACE063C00EE11F8 /* CombineCoreBluetooth */,
+				037544BD2ACE10FC00EE11F8 /* BluetoothKit */,
 			);
 			productName = BluetoothLEPlayground;
 			productReference = 03CE39032ACDE14C00CF882B /* BluetoothLEPlayground.app */;
@@ -237,7 +237,7 @@
 			);
 			mainGroup = 03CE38FA2ACDE14C00CF882B;
 			packageReferences = (
-				037544B22ACE063C00EE11F8 /* XCRemoteSwiftPackageReference "CombineCoreBluetooth" */,
+				037544BC2ACE10FC00EE11F8 /* XCRemoteSwiftPackageReference "BluetoothKit" */,
 			);
 			productRefGroup = 03CE39042ACDE14C00CF882B /* Products */;
 			projectDirPath = "";
@@ -618,21 +618,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		037544B22ACE063C00EE11F8 /* XCRemoteSwiftPackageReference "CombineCoreBluetooth" */ = {
+		037544BC2ACE10FC00EE11F8 /* XCRemoteSwiftPackageReference "BluetoothKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StarryInternet/CombineCoreBluetooth";
+			repositoryURL = "https://github.com/rhummelmose/BluetoothKit";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.6.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		037544B32ACE063C00EE11F8 /* CombineCoreBluetooth */ = {
+		037544BD2ACE10FC00EE11F8 /* BluetoothKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 037544B22ACE063C00EE11F8 /* XCRemoteSwiftPackageReference "CombineCoreBluetooth" */;
-			productName = CombineCoreBluetooth;
+			package = 037544BC2ACE10FC00EE11F8 /* XCRemoteSwiftPackageReference "BluetoothKit" */;
+			productName = BluetoothKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

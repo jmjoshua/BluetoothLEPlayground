@@ -1,12 +1,12 @@
 {
   "pins" : [
     {
-      "identity" : "combinecorebluetooth",
+      "identity" : "bluetoothkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StarryInternet/CombineCoreBluetooth",
+      "location" : "https://github.com/rhummelmose/BluetoothKit",
       "state" : {
-        "revision" : "0a055fa066f190596d9983ad982f8d640f560382",
-        "version" : "0.6.0"
+        "branch" : "master",
+        "revision" : "d6ab93cb3f98d9c4033bd37413d9fe90a4647cb4"
       }
     }
   ],

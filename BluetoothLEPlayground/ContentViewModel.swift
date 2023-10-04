@@ -6,20 +6,36 @@
 //
 
 import Foundation
+import OSLog
 
 extension ContentView {
     class ViewModel: ObservableObject {
         @Published var mode: Mode = .none
         @Published var loadingText: String?
 
+        private let bluetoothController = BluetoothController()
+        private var logger = Logger(subsystem: "BluetoothLEPlayground", category: "ContentViewModel")
+
         func startServerTapped() {
             mode = .server
             loadingText = "Starting server..."
+
+            do {
+                try bluetoothController.startCentralMode()
+            } catch {
+                logger.log("Unable to start server: \(error)")
+            }
         }
 
         func startClientTapped() {
             mode = .client
             loadingText = "Starting client..."
+
+            do {
+                try bluetoothController.startPeripheralMode()
+            } catch {
+                logger.log("Unable to start client: \(error)")
+            }
         }
 
         func stopTapped() {
