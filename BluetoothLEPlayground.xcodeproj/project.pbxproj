@@ -14,6 +14,8 @@
 		03CE39182ACDE14E00CF882B /* BluetoothLEPlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE39172ACDE14E00CF882B /* BluetoothLEPlaygroundTests.swift */; };
 		03CE39222ACDE14E00CF882B /* BluetoothLEPlaygroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE39212ACDE14E00CF882B /* BluetoothLEPlaygroundUITests.swift */; };
 		03CE39242ACDE14E00CF882B /* BluetoothLEPlaygroundUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE39232ACDE14E00CF882B /* BluetoothLEPlaygroundUITestsLaunchTests.swift */; };
+		03CE39392ACDEF4500CF882B /* RxBluetoothKit in Frameworks */ = {isa = PBXBuildFile; productRef = 03CE39382ACDEF4500CF882B /* RxBluetoothKit */; };
+		03CE393B2ACDEF9B00CF882B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE393A2ACDEF9B00CF882B /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		03CE391D2ACDE14E00CF882B /* BluetoothLEPlaygroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BluetoothLEPlaygroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CE39212ACDE14E00CF882B /* BluetoothLEPlaygroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothLEPlaygroundUITests.swift; sourceTree = "<group>"; };
 		03CE39232ACDE14E00CF882B /* BluetoothLEPlaygroundUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothLEPlaygroundUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		03CE39302ACDE1F100CF882B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		03CE393A2ACDEF9B00CF882B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03CE39392ACDEF4500CF882B /* RxBluetoothKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 				03CE39162ACDE14E00CF882B /* BluetoothLEPlaygroundTests */,
 				03CE39202ACDE14E00CF882B /* BluetoothLEPlaygroundUITests */,
 				03CE39042ACDE14C00CF882B /* Products */,
+				03CE39342ACDEB1800CF882B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,8 +100,10 @@
 		03CE39052ACDE14C00CF882B /* BluetoothLEPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				03CE39302ACDE1F100CF882B /* Info.plist */,
 				03CE39062ACDE14C00CF882B /* BluetoothLEPlaygroundApp.swift */,
 				03CE39082ACDE14C00CF882B /* ContentView.swift */,
+				03CE393A2ACDEF9B00CF882B /* ContentViewModel.swift */,
 				03CE390A2ACDE14E00CF882B /* Assets.xcassets */,
 				03CE390C2ACDE14E00CF882B /* Preview Content */,
 			);
@@ -127,6 +135,13 @@
 			path = BluetoothLEPlaygroundUITests;
 			sourceTree = "<group>";
 		};
+		03CE39342ACDEB1800CF882B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +158,9 @@
 			dependencies = (
 			);
 			name = BluetoothLEPlayground;
+			packageProductDependencies = (
+				03CE39382ACDEF4500CF882B /* RxBluetoothKit */,
+			);
 			productName = BluetoothLEPlayground;
 			productReference = 03CE39032ACDE14C00CF882B /* BluetoothLEPlayground.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +233,9 @@
 				Base,
 			);
 			mainGroup = 03CE38FA2ACDE14C00CF882B;
+			packageReferences = (
+				03CE39372ACDEF4400CF882B /* XCRemoteSwiftPackageReference "RxBluetoothKit" */,
+			);
 			productRefGroup = 03CE39042ACDE14C00CF882B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,6 +280,7 @@
 			files = (
 				03CE39092ACDE14C00CF882B /* ContentView.swift in Sources */,
 				03CE39072ACDE14C00CF882B /* BluetoothLEPlaygroundApp.swift in Sources */,
+				03CE393B2ACDEF9B00CF882B /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +447,7 @@
 				DEVELOPMENT_TEAM = 5J8HF46HKF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BluetoothLEPlayground/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,6 +477,7 @@
 				DEVELOPMENT_TEAM = 5J8HF46HKF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BluetoothLEPlayground/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -588,6 +612,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		03CE39372ACDEF4400CF882B /* XCRemoteSwiftPackageReference "RxBluetoothKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Polidea/RxBluetoothKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		03CE39382ACDEF4500CF882B /* RxBluetoothKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03CE39372ACDEF4400CF882B /* XCRemoteSwiftPackageReference "RxBluetoothKit" */;
+			productName = RxBluetoothKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 03CE38FB2ACDE14C00CF882B /* Project object */;
 }
