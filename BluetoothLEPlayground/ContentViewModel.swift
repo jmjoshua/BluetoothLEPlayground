@@ -16,44 +16,49 @@ extension ContentView {
         private let bluetoothController = BluetoothController()
         private var logger = Logger(subsystem: "BluetoothLEPlayground", category: "ContentViewModel")
 
-        func startServerTapped() {
-            mode = .server
-            loadingText = "Starting server..."
+        func startCentralTapped() {
+            mode = .central
+            loadingText = "Starting..."
 
             do {
                 try bluetoothController.startCentralMode()
             } catch {
-                logger.log("Unable to start server: \(error)")
+                logger.log("Unable to start central: \(error)")
             }
         }
 
-        func startClientTapped() {
-            mode = .client
-            loadingText = "Starting client..."
+        func startPeripheralTapped() {
+            mode = .peripheral
+            loadingText = "Starting..."
 
             do {
                 try bluetoothController.startPeripheralMode()
             } catch {
-                logger.log("Unable to start client: \(error)")
+                logger.log("Unable to start peripheral: \(error)")
             }
         }
 
         func stopTapped() {
             mode = .none
             loadingText = nil
+            do {
+                try bluetoothController.stopConnections()
+            } catch {
+                logger.log("Unable to stop connections: \(error)")
+            }
         }
     }
 }
 
 enum Mode: String {
-    case server, client, none
+    case central, peripheral, none
 
     var infoText: String {
         switch self {
-        case .server:
-            return "Server mode"
-        case .client:
-            return "Client mode"
+        case .central:
+            return "Central mode"
+        case .peripheral:
+            return "Peripheral mode"
         case .none:
             return "Select a mode to start"
         }

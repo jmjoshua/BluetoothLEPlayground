@@ -11,36 +11,78 @@ import OSLog
 
 class BluetoothController {
 
-    private var peripheral: BKPeripheral?
-    private var central: BKCentral?
+    private var peripheral = BKPeripheral()
+    private var central = BKCentral()
     private var logger = Logger(subsystem: "BluetoothLEPlayground", category: "BluetoothController")
 
     init() {
+        setupPeripheral()
+        setupCentral()
+    }
+
+    private func setupPeripheral() {
+        peripheral.delegate = self
+
+        do {
+            let serviceUUID = UUID(uuidString: "6E6B5C64-FAF7-40AE-9C21-D4933AF45B23")!
+            let characteristicUUID = UUID(uuidString: "477A2967-1FAB-4DC5-920A-DEE5DE685A3D")!
+            let localName = "My Cool Peripheral"
+            let configuration = BKPeripheralConfiguration(
+                dataServiceUUID: serviceUUID,
+                dataServiceCharacteristicUUID: characteristicUUID,
+                localName: localName)
+            try peripheral.startWithConfiguration(configuration)
+        } catch {
+            logger.log("peripheral error: \(error)")
+        }
+    }
+
+    private func setupCentral() {
+        do {
+            central.delegate = self
+            central.addAvailabilityObserver(self)
+
+            let serviceUUID = UUID(uuidString: "6E6B5C64-FAF7-40AE-9C21-D4933AF45B23")!
+            let characteristicUUID = UUID(uuidString: "477A2967-1FAB-4DC5-920A-DEE5DE685A3D")!
+            let configuration = BKConfiguration(dataServiceUUID: serviceUUID, dataServiceCharacteristicUUID: characteristicUUID)
+            try central.startWithConfiguration(configuration)
+        } catch {
+            logger.log("Central error: \(error)")
+        }
     }
 
     func startPeripheralMode() throws {
-        peripheral = BKPeripheral()
-        peripheral?.delegate = self
+        let data = String("Hello beloved central!").data(using: .utf8)!
+        let remoteCentral = peripheral.connectedRemoteCentrals.first // Don't do this in the real world :]
 
-        let serviceUUID = UUID(uuidString: "6E6B5C64-FAF7-40AE-9C21-D4933AF45B23")!
-        let characteristicUUID = UUID(uuidString: "477A2967-1FAB-4DC5-920A-DEE5DE685A3D")!
-        let localName = "My Cool Peripheral"
-        let configuration = BKPeripheralConfiguration(
-            dataServiceUUID: serviceUUID,
-            dataServiceCharacteristicUUID: characteristicUUID,
-            localName: localName)
-        try peripheral?.startWithConfiguration(configuration)
+        if let remoteCentral = remoteCentral {
+            peripheral.sendData(data, toRemotePeer: remoteCentral) { [weak self] data, remoteCentral, error in
+                // Handle error.
+                // If no error, the data was all sent!
+                self?.logger.log("peripheral error: \(error)")
+            }
+        }
     }
 
     func startCentralMode() throws {
-        let central = BKCentral()
-        central.delegate = self
-        central.addAvailabilityObserver(self)
+        central.scanContinuouslyWithChangeHandler({ [weak self] changes, discoveries in
+            // Handle changes to "availabile" discoveries, [BKDiscoveriesChange].
+            // Handle current "available" discoveries, [BKDiscovery].
+            // This is where you'd ie. update a table view.
+            self?.logger.log("Central new discoveries: \(discoveries)")
+        }, stateHandler: { [weak self] newState in
+            // Handle newState, BKCentral.ContinuousScanState.
+            // This is where you'd ie. start/stop an activity indicator.
+            let newState = newState.hashValue
+            self?.logger.log("Central new state: \(newState)")
+        }, duration: 3, inBetweenDelay: 3, errorHandler: { [weak self] error in
+            self?.logger.log("Central error: \(error)")
+        })
+    }
 
-        let serviceUUID = UUID(uuidString: "6E6B5C64-FAF7-40AE-9C21-D4933AF45B23")!
-        let characteristicUUID = UUID(uuidString: "477A2967-1FAB-4DC5-920A-DEE5DE685A3D")!
-        let configuration = BKConfiguration(dataServiceUUID: serviceUUID, dataServiceCharacteristicUUID: characteristicUUID)
-        try central.startWithConfiguration(configuration)
+    func stopConnections() throws {
+        try peripheral.stop()
+        try central.stop()
     }
 }
 

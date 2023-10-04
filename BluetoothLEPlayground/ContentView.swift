@@ -28,13 +28,13 @@ struct ContentView: View {
 
             // MARK: Buttons
             if vm.mode == .none {
-                Button("Start server mode") {
-                    vm.startServerTapped()
+                Button("Start central mode") {
+                    vm.startCentralTapped()
                 }
                 .buttonStyle(.borderedProminent)
 
-                Button("Start client mode") {
-                    vm.startClientTapped()
+                Button("Start peripheral mode") {
+                    vm.startPeripheralTapped()
                 }
                 .buttonStyle(.borderedProminent)
             } else {
