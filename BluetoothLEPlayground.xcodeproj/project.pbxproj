@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03CE39072ACDE14C00CF882B /* BluetoothLEPlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE39062ACDE14C00CF882B /* BluetoothLEPlaygroundApp.swift */; };
+		03CE39092ACDE14C00CF882B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE39082ACDE14C00CF882B /* ContentView.swift */; };
+		03CE390B2ACDE14E00CF882B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03CE390A2ACDE14E00CF882B /* Assets.xcassets */; };
+		03CE390E2ACDE14E00CF882B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03CE390D2ACDE14E00CF882B /* Preview Assets.xcassets */; };
+		03CE39182ACDE14E00CF882B /* BluetoothLEPlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE39172ACDE14E00CF882B /* BluetoothLEPlaygroundTests.swift */; };
+		03CE39222ACDE14E00CF882B /* BluetoothLEPlaygroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE39212ACDE14E00CF882B /* BluetoothLEPlaygroundUITests.swift */; };
+		03CE39242ACDE14E00CF882B /* BluetoothLEPlaygroundUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE39232ACDE14E00CF882B /* BluetoothLEPlaygroundUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03CE39142ACDE14E00CF882B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03CE38FB2ACDE14C00CF882B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03CE39022ACDE14C00CF882B;
+			remoteInfo = BluetoothLEPlayground;
+		};
+		03CE391E2ACDE14E00CF882B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03CE38FB2ACDE14C00CF882B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03CE39022ACDE14C00CF882B;
+			remoteInfo = BluetoothLEPlayground;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03CE39032ACDE14C00CF882B /* BluetoothLEPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothLEPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03CE39062ACDE14C00CF882B /* BluetoothLEPlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothLEPlaygroundApp.swift; sourceTree = "<group>"; };
+		03CE39082ACDE14C00CF882B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		03CE390A2ACDE14E00CF882B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		03CE390D2ACDE14E00CF882B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		03CE39132ACDE14E00CF882B /* BluetoothLEPlaygroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BluetoothLEPlaygroundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03CE39172ACDE14E00CF882B /* BluetoothLEPlaygroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothLEPlaygroundTests.swift; sourceTree = "<group>"; };
+		03CE391D2ACDE14E00CF882B /* BluetoothLEPlaygroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BluetoothLEPlaygroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03CE39212ACDE14E00CF882B /* BluetoothLEPlaygroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothLEPlaygroundUITests.swift; sourceTree = "<group>"; };
+		03CE39232ACDE14E00CF882B /* BluetoothLEPlaygroundUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothLEPlaygroundUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		03CE39002ACDE14C00CF882B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03CE39102ACDE14E00CF882B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03CE391A2ACDE14E00CF882B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03CE38FA2ACDE14C00CF882B = {
+			isa = PBXGroup;
+			children = (
+				03CE39052ACDE14C00CF882B /* BluetoothLEPlayground */,
+				03CE39162ACDE14E00CF882B /* BluetoothLEPlaygroundTests */,
+				03CE39202ACDE14E00CF882B /* BluetoothLEPlaygroundUITests */,
+				03CE39042ACDE14C00CF882B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		03CE39042ACDE14C00CF882B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03CE39032ACDE14C00CF882B /* BluetoothLEPlayground.app */,
+				03CE39132ACDE14E00CF882B /* BluetoothLEPlaygroundTests.xctest */,
+				03CE391D2ACDE14E00CF882B /* BluetoothLEPlaygroundUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		03CE39052ACDE14C00CF882B /* BluetoothLEPlayground */ = {
+			isa = PBXGroup;
+			children = (
+				03CE39062ACDE14C00CF882B /* BluetoothLEPlaygroundApp.swift */,
+				03CE39082ACDE14C00CF882B /* ContentView.swift */,
+				03CE390A2ACDE14E00CF882B /* Assets.xcassets */,
+				03CE390C2ACDE14E00CF882B /* Preview Content */,
+			);
+			path = BluetoothLEPlayground;
+			sourceTree = "<group>";
+		};
+		03CE390C2ACDE14E00CF882B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				03CE390D2ACDE14E00CF882B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		03CE39162ACDE14E00CF882B /* BluetoothLEPlaygroundTests */ = {
+			isa = PBXGroup;
+			children = (
+				03CE39172ACDE14E00CF882B /* BluetoothLEPlaygroundTests.swift */,
+			);
+			path = BluetoothLEPlaygroundTests;
+			sourceTree = "<group>";
+		};
+		03CE39202ACDE14E00CF882B /* BluetoothLEPlaygroundUITests */ = {
+			isa = PBXGroup;
+			children = (
+				03CE39212ACDE14E00CF882B /* BluetoothLEPlaygroundUITests.swift */,
+				03CE39232ACDE14E00CF882B /* BluetoothLEPlaygroundUITestsLaunchTests.swift */,
+			);
+			path = BluetoothLEPlaygroundUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		03CE39022ACDE14C00CF882B /* BluetoothLEPlayground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03CE39272ACDE14E00CF882B /* Build configuration list for PBXNativeTarget "BluetoothLEPlayground" */;
+			buildPhases = (
+				03CE38FF2ACDE14C00CF882B /* Sources */,
+				03CE39002ACDE14C00CF882B /* Frameworks */,
+				03CE39012ACDE14C00CF882B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BluetoothLEPlayground;
+			productName = BluetoothLEPlayground;
+			productReference = 03CE39032ACDE14C00CF882B /* BluetoothLEPlayground.app */;
+			productType = "com.apple.product-type.application";
+		};
+		03CE39122ACDE14E00CF882B /* BluetoothLEPlaygroundTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03CE392A2ACDE14E00CF882B /* Build configuration list for PBXNativeTarget "BluetoothLEPlaygroundTests" */;
+			buildPhases = (
+				03CE390F2ACDE14E00CF882B /* Sources */,
+				03CE39102ACDE14E00CF882B /* Frameworks */,
+				03CE39112ACDE14E00CF882B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03CE39152ACDE14E00CF882B /* PBXTargetDependency */,
+			);
+			name = BluetoothLEPlaygroundTests;
+			productName = BluetoothLEPlaygroundTests;
+			productReference = 03CE39132ACDE14E00CF882B /* BluetoothLEPlaygroundTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		03CE391C2ACDE14E00CF882B /* BluetoothLEPlaygroundUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03CE392D2ACDE14E00CF882B /* Build configuration list for PBXNativeTarget "BluetoothLEPlaygroundUITests" */;
+			buildPhases = (
+				03CE39192ACDE14E00CF882B /* Sources */,
+				03CE391A2ACDE14E00CF882B /* Frameworks */,
+				03CE391B2ACDE14E00CF882B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03CE391F2ACDE14E00CF882B /* PBXTargetDependency */,
+			);
+			name = BluetoothLEPlaygroundUITests;
+			productName = BluetoothLEPlaygroundUITests;
+			productReference = 03CE391D2ACDE14E00CF882B /* BluetoothLEPlaygroundUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		03CE38FB2ACDE14C00CF882B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					03CE39022ACDE14C00CF882B = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					03CE39122ACDE14E00CF882B = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 03CE39022ACDE14C00CF882B;
+					};
+					03CE391C2ACDE14E00CF882B = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 03CE39022ACDE14C00CF882B;
+					};
+				};
+			};
+			buildConfigurationList = 03CE38FE2ACDE14C00CF882B /* Build configuration list for PBXProject "BluetoothLEPlayground" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 03CE38FA2ACDE14C00CF882B;
+			productRefGroup = 03CE39042ACDE14C00CF882B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				03CE39022ACDE14C00CF882B /* BluetoothLEPlayground */,
+				03CE39122ACDE14E00CF882B /* BluetoothLEPlaygroundTests */,
+				03CE391C2ACDE14E00CF882B /* BluetoothLEPlaygroundUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		03CE39012ACDE14C00CF882B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03CE390E2ACDE14E00CF882B /* Preview Assets.xcassets in Resources */,
+				03CE390B2ACDE14E00CF882B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03CE39112ACDE14E00CF882B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03CE391B2ACDE14E00CF882B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		03CE38FF2ACDE14C00CF882B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03CE39092ACDE14C00CF882B /* ContentView.swift in Sources */,
+				03CE39072ACDE14C00CF882B /* BluetoothLEPlaygroundApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03CE390F2ACDE14E00CF882B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03CE39182ACDE14E00CF882B /* BluetoothLEPlaygroundTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03CE39192ACDE14E00CF882B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03CE39222ACDE14E00CF882B /* BluetoothLEPlaygroundUITests.swift in Sources */,
+				03CE39242ACDE14E00CF882B /* BluetoothLEPlaygroundUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03CE39152ACDE14E00CF882B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03CE39022ACDE14C00CF882B /* BluetoothLEPlayground */;
+			targetProxy = 03CE39142ACDE14E00CF882B /* PBXContainerItemProxy */;
+		};
+		03CE391F2ACDE14E00CF882B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03CE39022ACDE14C00CF882B /* BluetoothLEPlayground */;
+			targetProxy = 03CE391E2ACDE14E00CF882B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		03CE39252ACDE14E00CF882B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		03CE39262ACDE14E00CF882B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		03CE39282ACDE14E00CF882B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BluetoothLEPlayground/Preview Content\"";
+				DEVELOPMENT_TEAM = 5J8HF46HKF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshmoore.BluetoothLEPlayground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		03CE39292ACDE14E00CF882B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BluetoothLEPlayground/Preview Content\"";
+				DEVELOPMENT_TEAM = 5J8HF46HKF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshmoore.BluetoothLEPlayground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		03CE392B2ACDE14E00CF882B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5J8HF46HKF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshmoore.BluetoothLEPlaygroundTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BluetoothLEPlayground.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BluetoothLEPlayground";
+			};
+			name = Debug;
+		};
+		03CE392C2ACDE14E00CF882B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5J8HF46HKF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshmoore.BluetoothLEPlaygroundTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BluetoothLEPlayground.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BluetoothLEPlayground";
+			};
+			name = Release;
+		};
+		03CE392E2ACDE14E00CF882B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5J8HF46HKF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshmoore.BluetoothLEPlaygroundUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BluetoothLEPlayground;
+			};
+			name = Debug;
+		};
+		03CE392F2ACDE14E00CF882B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5J8HF46HKF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshmoore.BluetoothLEPlaygroundUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BluetoothLEPlayground;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		03CE38FE2ACDE14C00CF882B /* Build configuration list for PBXProject "BluetoothLEPlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03CE39252ACDE14E00CF882B /* Debug */,
+				03CE39262ACDE14E00CF882B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03CE39272ACDE14E00CF882B /* Build configuration list for PBXNativeTarget "BluetoothLEPlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03CE39282ACDE14E00CF882B /* Debug */,
+				03CE39292ACDE14E00CF882B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03CE392A2ACDE14E00CF882B /* Build configuration list for PBXNativeTarget "BluetoothLEPlaygroundTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03CE392B2ACDE14E00CF882B /* Debug */,
+				03CE392C2ACDE14E00CF882B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03CE392D2ACDE14E00CF882B /* Build configuration list for PBXNativeTarget "BluetoothLEPlaygroundUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03CE392E2ACDE14E00CF882B /* Debug */,
+				03CE392F2ACDE14E00CF882B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 03CE38FB2ACDE14C00CF882B /* Project object */;
+}
