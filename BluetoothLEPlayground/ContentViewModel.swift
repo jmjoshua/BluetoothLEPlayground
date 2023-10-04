@@ -43,13 +43,3 @@ enum Mode: String {
         }
     }
 }
-
-import RxBluetoothKit
-
-struct BluetoothController {
-    let manager = CentralManager(queue: .main)
-
-    func startObserving() {
-        
-    }
-}
