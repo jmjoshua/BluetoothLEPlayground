@@ -20,7 +20,8 @@ import CoreBluetooth
 public protocol Central {
     var statusPublisher: PassthroughSubject<CentralStatusType, Never> { get }
     var scanStatusPublisher: PassthroughSubject<CentralScanStatusType, Never> { get }
-    func beginScanningForPeripherals(serviceUUID: UUID, characteristicUUID: UUID) throws
+    func configure(serviceUUID: UUID, characteristicUUID: UUID) throws
+    func beginScanningForPeripherals() throws
     func connect(to peripheral: BKRemotePeripheral)
     func disconnect()
 }
@@ -36,12 +37,12 @@ public class CentralImpl: Central {
         subsystem: Constants.Logging.subsystem,
         category: Constants.Logging.categoryCentral)
 
-    init() {
+    public init() {
         central.delegate = self
         central.addAvailabilityObserver(self)
     }
 
-    public func beginScanningForPeripherals(serviceUUID: UUID, characteristicUUID: UUID) throws {
+    public func configure(serviceUUID: UUID, characteristicUUID: UUID) throws {
         do {
             self.serviceUUID = serviceUUID
             self.characteristicUUID = characteristicUUID
@@ -52,19 +53,21 @@ public class CentralImpl: Central {
                 dataServiceUUID: serviceUUID,
                 dataServiceCharacteristicUUID: characteristicUUID)
             try central.startWithConfiguration(configuration)
-
-            scanForPeripherals()
         } catch {
             logger.log("Error while starting central: \(error)")
             throw error
         }
     }
 
+    public func beginScanningForPeripherals() {
+        scanForPeripherals()
+    }
+
     public func connect(to peripheral: BKRemotePeripheral) {
         central.connect(remotePeripheral: peripheral) { [weak self] remotePeripheral, error in
             self?.logger.log("Connected to peripheral: \(remotePeripheral.identifier.uuidString)")
             remotePeripheral.delegate = self
-            self?.central.interruptScan()
+            self?.statusPublisher.send(.connected)
         }
     }
 
@@ -103,6 +106,7 @@ private extension CentralImpl {
                 guard !central.connectedRemotePeripherals.contains(peripheral) else { return }
 
                 statusPublisher.send(.peripheralsFound([peripheral]))
+                central.interruptScan()
             }
         }, stateHandler: { [weak self] newState in
             // Handle newState, BKCentral.ContinuousScanState.
@@ -119,8 +123,7 @@ private extension CentralImpl {
                 self?.logger.log("Central new state: Stopped")
             }
         }, duration: 3, inBetweenDelay: 3, errorHandler: { [weak self] error in
-            self?.statusPublisher.send(.error(error))
-            self?.logger.log("Central error: \(error)")
+            self?.logger.error("Central scanning error: \(error)")
         })
     }
 }
@@ -133,7 +136,7 @@ extension CentralImpl: BKRemotePeerDelegate {
 
 extension CentralImpl: BKCentralDelegate {
     public func central(_ central: BluetoothKit.BKCentral, remotePeripheralDidDisconnect remotePeripheral: BluetoothKit.BKRemotePeripheral) {
-        // Unimplemented
+        self.statusPublisher.send(.connected)
     }
 }
 

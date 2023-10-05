@@ -16,20 +16,26 @@ struct ContentView: View {
             // MARK: Title
             Text(vm.mode.infoText)
                 .font(.title)
-            if let statusMessage = vm.statusMessage {
-                Text(statusMessage)
-            }
 
-            // MARK: Loading Indicator
-            if vm.isLoading {
-                ProgressView()
-                    .padding(.vertical)
+            HStack {
+                if let statusMessage = vm.statusMessage {
+                    Text(statusMessage)
+                }
+                if vm.isLoading {
+                    ProgressView()
+                }
             }
+            .padding(.vertical)
 
             // MARK: Mode-specific views
             switch vm.mode {
             case .central:
-                EmptyView()
+                if vm.showConnectButton {
+                    Button("Connect") {
+                        vm.connectTapped()
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
             case .peripheral:
                 Button("Send data") {
                     vm.sendDataTapped()

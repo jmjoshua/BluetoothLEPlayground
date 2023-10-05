@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		03CE39222ACDE14E00CF882B /* BluetoothLEPlaygroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE39212ACDE14E00CF882B /* BluetoothLEPlaygroundUITests.swift */; };
 		03CE39242ACDE14E00CF882B /* BluetoothLEPlaygroundUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE39232ACDE14E00CF882B /* BluetoothLEPlaygroundUITestsLaunchTests.swift */; };
 		03CE393B2ACDEF9B00CF882B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE393A2ACDEF9B00CF882B /* ContentViewModel.swift */; };
+		03E33D382ACF5FF70030B3AA /* doordash-ios-ble in Frameworks */ = {isa = PBXBuildFile; productRef = 03E33D372ACF5FF70030B3AA /* doordash-ios-ble */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03E33D382ACF5FF70030B3AA /* doordash-ios-ble in Frameworks */,
 				037544BE2ACE10FC00EE11F8 /* BluetoothKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +175,7 @@
 			name = BluetoothLEPlayground;
 			packageProductDependencies = (
 				037544BD2ACE10FC00EE11F8 /* BluetoothKit */,
+				03E33D372ACF5FF70030B3AA /* doordash-ios-ble */,
 			);
 			productName = BluetoothLEPlayground;
 			productReference = 03CE39032ACDE14C00CF882B /* BluetoothLEPlayground.app */;
@@ -248,6 +251,7 @@
 			mainGroup = 03CE38FA2ACDE14C00CF882B;
 			packageReferences = (
 				037544BC2ACE10FC00EE11F8 /* XCRemoteSwiftPackageReference "BluetoothKit" */,
+				03E33D362ACF5FF70030B3AA /* XCLocalSwiftPackageReference "doordash-ios-ble" */,
 			);
 			productRefGroup = 03CE39042ACDE14C00CF882B /* Products */;
 			projectDirPath = "";
@@ -633,6 +637,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		03E33D362ACF5FF70030B3AA /* XCLocalSwiftPackageReference "doordash-ios-ble" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "doordash-ios-ble";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		037544BC2ACE10FC00EE11F8 /* XCRemoteSwiftPackageReference "BluetoothKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -649,6 +660,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 037544BC2ACE10FC00EE11F8 /* XCRemoteSwiftPackageReference "BluetoothKit" */;
 			productName = BluetoothKit;
+		};
+		03E33D372ACF5FF70030B3AA /* doordash-ios-ble */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "doordash-ios-ble";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

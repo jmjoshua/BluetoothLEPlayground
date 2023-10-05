@@ -30,6 +30,10 @@ public struct PeripheralImpl: Peripheral {
         subsystem: Constants.Logging.subsystem,
         category: Constants.Logging.categoryPeripheral)
 
+    public init() {
+
+    }
+
     public func startAdvertising() {
         // Unimplemented
     }
