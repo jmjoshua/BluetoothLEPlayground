@@ -106,8 +106,7 @@
 				03E33D2B2ACE1A130030B3AA /* BluetoothLEPlayground.entitlements */,
 				03CE39302ACDE1F100CF882B /* Info.plist */,
 				03CE39062ACDE14C00CF882B /* BluetoothLEPlaygroundApp.swift */,
-				03CE39082ACDE14C00CF882B /* ContentView.swift */,
-				03CE393A2ACDEF9B00CF882B /* ContentViewModel.swift */,
+				03E33D312ACE2F750030B3AA /* ContentView */,
 				037544B02ACE05D200EE11F8 /* BluetoothController.swift */,
 				03CE390A2ACDE14E00CF882B /* Assets.xcassets */,
 				03CE390C2ACDE14E00CF882B /* Preview Content */,
@@ -145,6 +144,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		03E33D312ACE2F750030B3AA /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				03CE39082ACDE14C00CF882B /* ContentView.swift */,
+				03CE393A2ACDEF9B00CF882B /* ContentViewModel.swift */,
+			);
+			path = ContentView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

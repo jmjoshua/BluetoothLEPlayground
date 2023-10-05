@@ -7,18 +7,25 @@
 
 import Foundation
 import OSLog
+import Combine
 
 extension ContentView {
     class ViewModel: ObservableObject {
         @Published var mode: Mode = .none
-        @Published var loadingText: String?
+        @Published var statusMessage: String?
+        @Published var isLoading: Bool = false
+        @Published var enableSendButton: Bool = false
 
+        private var subscriptions = Set<AnyCancellable>()
         private let bluetoothController = BluetoothController()
         private var logger = Logger(subsystem: "BluetoothLEPlayground", category: "ContentViewModel")
 
+        init() {
+            setupSubscriptions()
+        }
+
         func startCentralTapped() {
             mode = .central
-            loadingText = "Starting..."
 
             do {
                 try bluetoothController.startCentralMode()
@@ -29,23 +36,46 @@ extension ContentView {
 
         func startPeripheralTapped() {
             mode = .peripheral
-            loadingText = "Starting..."
+        }
 
+        func sendDataTapped() {
             do {
-                try bluetoothController.startPeripheralMode()
+                try bluetoothController.sendPeripheralData()
             } catch {
-                logger.log("Unable to start peripheral: \(error)")
+                logger.log("Unable to send data: \(error)")
             }
         }
 
         func stopTapped() {
             mode = .none
-            loadingText = nil
             do {
                 try bluetoothController.stopConnections()
             } catch {
                 logger.log("Unable to stop connections: \(error)")
             }
+        }
+
+        private func setupSubscriptions() {
+            bluetoothController.isLoading
+                .receive(on: RunLoop.main)
+                .sink { isLoading in
+                    self.isLoading = isLoading
+                }
+                .store(in: &subscriptions)
+
+            bluetoothController.peripheralCanSendData
+                .receive(on: RunLoop.main)
+                .sink { canSendData in
+                    self.enableSendButton = canSendData
+                }
+                .store(in: &subscriptions)
+
+            bluetoothController.statusMessage
+                .receive(on: RunLoop.main)
+                .sink { message in
+                    self.statusMessage = message
+                }
+                .store(in: &subscriptions)
         }
     }
 }

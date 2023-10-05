@@ -16,15 +16,29 @@ struct ContentView: View {
             // MARK: Title
             Text(vm.mode.infoText)
                 .font(.title)
-
-            // MARK: Loading Indicator
-            if let loadingText = vm.loadingText {
-                HStack {
-                    ProgressView(loadingText)
-                        .progressViewStyle(.circular)
-                }.padding(.vertical)
+            if let statusMessage = vm.statusMessage {
+                Text(statusMessage)
             }
 
+            // MARK: Loading Indicator
+            if vm.isLoading {
+                ProgressView()
+                    .padding(.vertical)
+            }
+
+            // MARK: Mode-specific views
+            switch vm.mode {
+            case .central:
+                EmptyView()
+            case .peripheral:
+                Button("Send data") {
+                    vm.sendDataTapped()
+                }
+                .buttonStyle(.borderedProminent)
+                .disabled(!vm.enableSendButton)
+            case .none:
+                EmptyView()
+            }
 
             // MARK: Buttons
             if vm.mode == .none {
