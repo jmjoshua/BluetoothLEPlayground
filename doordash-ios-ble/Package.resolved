@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "bluetoothkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rhummelmose/BluetoothKit",
+      "state" : {
+        "branch" : "master",
+        "revision" : "d6ab93cb3f98d9c4033bd37413d9fe90a4647cb4"
+      }
+    }
+  ],
+  "version" : 2
+}
