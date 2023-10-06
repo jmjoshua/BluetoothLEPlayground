@@ -21,7 +21,7 @@ public protocol Central {
     var statusPublisher: PassthroughSubject<CentralStatusType, Never> { get }
     var scanStatusPublisher: PassthroughSubject<CentralScanStatusType, Never> { get }
     func configure(serviceUUID: UUID, characteristicUUID: UUID) throws
-    func beginScanningForPeripherals() throws
+    func beginScanningForPeripherals()
     func connect(to peripheral: BKRemotePeripheral)
     func disconnect()
 }
@@ -53,6 +53,7 @@ public class CentralImpl: Central {
                 dataServiceUUID: serviceUUID,
                 dataServiceCharacteristicUUID: characteristicUUID)
             try central.startWithConfiguration(configuration)
+            statusPublisher.send(.ready)
         } catch {
             logger.log("Error while starting central: \(error)")
             throw error
@@ -136,7 +137,7 @@ extension CentralImpl: BKRemotePeerDelegate {
 
 extension CentralImpl: BKCentralDelegate {
     public func central(_ central: BluetoothKit.BKCentral, remotePeripheralDidDisconnect remotePeripheral: BluetoothKit.BKRemotePeripheral) {
-        self.statusPublisher.send(.connected)
+        self.statusPublisher.send(.disconnected)
     }
 }
 

@@ -8,5 +8,6 @@
 import Foundation
 
 public enum PeripheralStatusType {
-    case ready, advertising, disconnected
+    case ready, advertising, connected, disconnected, dataSent
+    case error(_ error: Error)
 }

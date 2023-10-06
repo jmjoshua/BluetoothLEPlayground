@@ -20,14 +20,14 @@ extension ContentView {
         @Published var showConnectButton: Bool = false
 
         private var subscriptions = Set<AnyCancellable>()
-        private let bluetoothController = BluetoothController()
         private let central = CentralImpl()
+        private let peripheral = PeripheralImpl()
         private var remotePeripherals = [BKRemotePeripheral]()
         private var logger = Logger(subsystem: "BluetoothLEPlayground", category: "ContentViewModel")
 
         init() {
-            setupSubscriptions()
             setupCentralSubscriptions()
+            setupPeripheralSubscriptions()
 
             do {
                 try central.configure(
@@ -46,6 +46,14 @@ extension ContentView {
 
         func startPeripheralTapped() {
             mode = .peripheral
+
+            do {
+                try peripheral.startAdvertising(
+                    serviceUUID: UUID(uuidString: "6E6B5C64-FAF7-40AE-9C21-D4933AF45B23")!,
+                    characteristicUUID: UUID(uuidString: "477A2967-1FAB-4DC5-920A-DEE5DE685A3D")!)
+            } catch {
+                logger.log("Unable to start peripheral: \(error)")
+            }
         }
 
         func connectTapped() {
@@ -54,43 +62,18 @@ extension ContentView {
         }
 
         func sendDataTapped() {
-            do {
-                try bluetoothController.sendPeripheralData()
-            } catch {
-                logger.log("Unable to send data: \(error)")
-            }
+            let data = String("Hello beloved central!").data(using: .utf8)!
+            peripheral.sendData(data)
         }
 
         func stopTapped() {
-            mode = .none
-            do {
-                try bluetoothController.stopConnections()
-            } catch {
-                logger.log("Unable to stop connections: \(error)")
+            switch mode {
+            case .central: central.disconnect()
+            case .peripheral: peripheral.disconnect()
+            case .none: break
             }
-        }
 
-        private func setupSubscriptions() {
-            bluetoothController.isLoading
-                .receive(on: RunLoop.main)
-                .sink { isLoading in
-                    self.isLoading = isLoading
-                }
-                .store(in: &subscriptions)
-
-            bluetoothController.peripheralCanSendData
-                .receive(on: RunLoop.main)
-                .sink { canSendData in
-                    self.enableSendButton = canSendData
-                }
-                .store(in: &subscriptions)
-
-            bluetoothController.statusMessage
-                .receive(on: RunLoop.main)
-                .sink { message in
-                    self.statusMessage = message
-                }
-                .store(in: &subscriptions)
+            mode = .none
         }
 
         private func setupCentralSubscriptions() {
@@ -106,6 +89,7 @@ extension ContentView {
                         self?.statusMessage = "Ready"
                     case .connected:
                         self?.statusMessage = "Connected"
+                        self?.showConnectButton = false
                     case .disconnected:
                         self?.statusMessage = "Disconnected"
                     case let .peripheralsFound(peripherals):
@@ -113,7 +97,12 @@ extension ContentView {
                         self?.statusMessage = "Peripherals found: \(peripherals.map({ $0.identifier }))"
                         self?.showConnectButton = true
                     case let .dataReceived(data):
-                        self?.statusMessage = "Data received: \(data)"
+                        guard let message = String.init(data: data, encoding: .utf8) else {
+                            self?.statusMessage = "Unable to deserialize received data."
+                            return
+                        }
+
+                        self?.statusMessage = "Data received: \(message)"
                     case let .error(error):
                         self?.statusMessage = "Error: \(error)"
                     }
@@ -134,6 +123,32 @@ extension ContentView {
                         self?.statusMessage = "Scanning..."
                     case .stopped:
                         self?.isLoading = false
+                    }
+                }
+                .store(in: &subscriptions)
+        }
+
+        private func setupPeripheralSubscriptions() {
+            peripheral.statusPublisher
+                .receive(on: RunLoop.main)
+                .sink { [weak self] status in
+                    switch status {
+                    case .ready:
+                        self?.statusMessage = "Ready"
+                    case .advertising:
+                        self?.isLoading = true
+                        self?.statusMessage = "Advertising..."
+                    case .connected:
+                        self?.isLoading = false
+                        self?.statusMessage = "Connected"
+                        self?.enableSendButton = true
+                    case .disconnected:
+                        self?.statusMessage = "Disconnected"
+                        self?.enableSendButton = false
+                    case .dataSent:
+                        self?.statusMessage = "Data sent!"
+                    case let .error(error):
+                        self?.statusMessage = "Error: \(error)"
                     }
                 }
                 .store(in: &subscriptions)
