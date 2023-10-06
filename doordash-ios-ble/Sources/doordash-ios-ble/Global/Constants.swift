@@ -15,5 +15,6 @@ struct Constants {
     }
     struct Keys {
         static let serviceUUIDArrayKey = "kCBAdvDataServiceUUIDs"
+        static let serviceUUIDArrayBackgroundKey = "kCBAdvDataHashedServiceUUIDs"
     }
 }

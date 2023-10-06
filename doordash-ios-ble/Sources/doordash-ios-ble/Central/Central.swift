@@ -89,11 +89,19 @@ private extension CentralImpl {
             self.logger.log("Central new discoveries: \(discoveries)")
 
             if !discoveries.isEmpty {
-                let peripheralsAndServiceIDs = discoveries
+                var peripheralsAndServiceIDs = discoveries
                     .compactMap {
                         (peripheral: $0.remotePeripheral,
                          serviceIDs: $0.advertisementData[Constants.Keys.serviceUUIDArrayKey] as? [CBUUID])
                     }
+                let peripheralsAndServiceIDsBackground = discoveries
+                    .compactMap {
+                        (peripheral: $0.remotePeripheral,
+                         serviceIDs: $0.advertisementData[Constants.Keys.serviceUUIDArrayBackgroundKey] as? [CBUUID])
+                    }
+                
+                peripheralsAndServiceIDs.append(contentsOf: peripheralsAndServiceIDsBackground)
+
                 guard let peripheralPair = peripheralsAndServiceIDs.first(where: { pair in
                     if let serviceIds = pair.serviceIDs,
                        let serviceUUID = self.serviceUUID {
